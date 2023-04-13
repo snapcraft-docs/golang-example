@@ -1,0 +1,19 @@
+name: golang-example
+base: core20
+version: '0.1'
+summary: An example snap for a golang project
+description: |
+  Shows how to create a snap for an application written in the Go language.
+
+grade: devel
+confinement: strict
+
+apps:
+  golang-example:
+    command: bin/hello.go
+
+parts:
+  golang-example:
+    build-snaps: [go]
+    plugin: go
+    source: .
